@@ -2,9 +2,6 @@ package XML::XOXO::Parser;
 use strict;
 use base qw( XML::Parser );
 
-use vars qw($VERSION);
-$VERSION = 0.03;
-
 my %HANDLERS;
 BEGIN {
     no strict 'refs';

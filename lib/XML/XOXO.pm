@@ -3,7 +3,7 @@ use strict;
 use XML::XOXO::Node;
 use XML::XOXO::Parser;
 use vars qw($VERSION);
-$VERSION = 0.031;
+$VERSION = 0.032;
 1;
 
 __END__
