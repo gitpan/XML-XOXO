@@ -1,0 +1,8 @@
+Revision history for Perl extension XML::XOXO.
+
+0.02  Dec 30 2004
+	- Converted XML::Parse::Style::XOXO to XML::Parser subclass 
+	  XML::XOXO::Parser
+
+0.01  Dec 30 2004
+	- Initial release. Internal only.
