@@ -177,3 +177,56 @@ sub strip_ws {
 } 
 
 1;
+
+__END__
+
+=begin
+
+=head1 NAME
+
+XML::XOXO::Parser - A parser for Extensible Open XHTML Outlines (XOXO) markup.
+
+=head1 METHODS
+
+The following objects and methods are provided in this package.
+
+=item XML::XOXO::Parser->new
+
+Constructor. Returns a reference to a new XML::XOXO::Parser object.
+
+=item $parser->parse(source)
+
+Inherited from L<XML::Parser>, the SOURCE parameter should either
+open an IO::Handle or a string containing the whole XML document. A
+die call is thrown if a parse error occurs otherwise it will return
+an ARRAY of L<XML::XOXO::Node> root objects.
+
+=item $parser->parsefile(file)
+
+Inherited from L<XML::Parser>, FILE is an open handle. The file is
+closed no matter how parse returns. A
+die call is thrown if a parse error occurs otherwise it will return
+an ARRAY of L<XML::XOXO::Node> root objects.
+
+=head1 DEPENDENCIES
+
+L<XML::Parser>, L<Class::XPath> 1.4
+
+=head1 TO DO
+
+=over
+
+=item * Handle embedded XOXO in an XHTML document
+
+=item * Implement strict mode
+
+=back
+
+=head1 AUTHOR & COPYRIGHT
+
+Please see the XML::XOXO manpage for author, copyright, and license
+information.
+
+=cut
+
+=end

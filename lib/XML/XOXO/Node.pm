@@ -98,5 +98,99 @@ sub encode_xml {
     $str;
 }
 
+*query = \&match;
+
 1;
 
+__END__
+
+=begin
+
+=head1 NAME
+
+XML::RSS::Parser::Element -- a node in the XML::RSS::Parser parse tree.
+
+=head1 METHODS
+
+=over
+
+=item XML::XOXO::Node->new( [\%init] )
+
+Constructor for XML::XOXO::Node. 
+
+=item $element->root
+
+Returns a reference to the root node of from the parse tree.
+
+=item $element->parent( [$element] )
+
+Returns a reference to the parent node. A
+L<XML::XOXO::Node> object or one of its subclasses can be
+passed to optionally set the parent.
+
+=item $element->name( [$extended_name] )
+
+Returns the name of the node (that XHTML tag) as a SCALAR. 
+
+=item $element->attributes( [\%attributes] )
+
+Returns a HASH reference contain attributes and their values as key
+value pairs. An optional parameter of a HASH reference can be
+passed in to set multiple attributes. Returns C<undef> if no
+attributes exist. B<NOTE:> When setting attributes with this
+method, all existing attributes are overwritten irregardless of
+whether they are present in the hash being passed in.
+
+This is where the node information, such as url, text, and description, 
+is be found. Values are scalars unless they are multi-valued in which 
+an ARRAY reference is returned.
+
+=item $element->contents([\@children])
+
+Returns an ordered ARRAY reference of direct sibling nodes.
+Returns a reference to an empty array if the element does not have
+any siblings. If a parameter is passed all the direct siblings are
+(re)set.
+
+=item $element->as_xml
+
+Creates an XHTML fragment for the node including its siblings. This has 
+its limitations, but should suffice for the relatively straight-forward 
+markup used by XOXO.
+
+=back
+
+=head2 XPath-esque Methods
+
+=over
+
+=item $element->query($xpath)
+
+Finds matching nodes using an XPath-esque query from anywhere in
+the tree. See the L<Class::XPath> documentation for more
+information.
+
+=item $element->xpath
+
+Returns a unique XPath string to the current node which can be used
+as an identifier.
+
+=back
+
+These methods were implemented for internal use with L<Class::XPath>
+and have now been exposed for general use.
+
+=back
+
+=head1 SEE ALSO
+
+L<XML::Parser>, L<Class::XPath>
+
+=head1 AUTHOR & COPYRIGHT
+
+Please see the XML::XOXO manpage for author, copyright, and
+license information.
+
+=cut
+
+=end
