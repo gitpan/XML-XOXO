@@ -1,10 +1,13 @@
 Revision history for Perl extension XML::XOXO.
 
-0.32  Jan 07 2005
+0.033 Jan 08 2005
+    - Documentation fixes
+
+0.032 Jan 07 2005
     - Signals were crossed and 0.31 got blocked from entry into CPAN.
     - Merged tests from 0.03 and documentation from 0.31
 
-0.31  Jan 07 2005
+0.031 Jan 07 2005
 	- Documentation.
 
 0.03  Dec 31 2004

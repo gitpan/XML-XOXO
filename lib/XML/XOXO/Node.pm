@@ -108,7 +108,7 @@ __END__
 
 =head1 NAME
 
-XML::RSS::Parser::Element -- a node in the XML::RSS::Parser parse tree.
+XML::XOXO::Node -- a node in the XML::RSS::Parser parse tree.
 
 =head1 METHODS
 
